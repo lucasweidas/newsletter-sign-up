@@ -12,6 +12,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+      </head>
       <body className={`${roboto.variable} font-sans`}>{children}</body>
     </html>
   );
