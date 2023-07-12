@@ -1,22 +1,17 @@
-'use client';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { object, string, InferType } from 'yup';
+import { formSchema } from '@/schemas/form';
+import { FormData, SignUpFormProps } from '@/interfaces';
 
-const formSchema = object({
-  email: string().email('Valid email required').required('Email is required'),
-});
-type FormData = InferType<typeof formSchema>;
-
-export function SignUpForm() {
+export function SignUpForm({ setFormData }: SignUpFormProps) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>({ resolver: yupResolver(formSchema) });
 
-  function onSubmit({ email }: FormData) {
-    console.log(email);
+  function onSubmit(data: FormData) {
+    setFormData(data);
   }
 
   return (
@@ -32,7 +27,7 @@ export function SignUpForm() {
             </span>
           )}
           <input
-            className={`w-full rounded-md px-6 py-4 text-gray-800 ring-1 ring-gray-400 transition-shadow duration-200 placeholder:text-gray-400 hover:ring-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-800 md:col-span-2 ${
+            className={`w-full rounded-md px-6 py-4 text-gray-800 outline-none ring-1 ring-gray-400 transition-shadow duration-200 placeholder:text-gray-400 hover:ring-2 focus-visible:ring-2 focus-visible:ring-gray-800 md:col-span-2 ${
               errors.email ? 'bg-red-400/20 !text-red-400 !ring-red-400' : ''
             }`}
             type="text"
@@ -43,7 +38,7 @@ export function SignUpForm() {
           />
         </div>
         <button
-          className="relative isolate overflow-hidden rounded-lg bg-gray-800 p-5 font-bold text-white transition-[background-color_shadow] duration-200 before:absolute before:left-0 before:top-0 before:-z-[1] before:h-full before:w-full before:bg-linear-gradient-red-1 before:opacity-0 before:transition-opacity before:duration-200 hover:bg-transparent hover:shadow-xl hover:shadow-red-400/30 hover:before:opacity-100"
+          className="relative isolate overflow-hidden rounded-lg bg-gray-800 p-5 font-bold text-white outline-none transition-[background-color_shadow] duration-200 before:absolute before:left-0 before:top-0 before:-z-[1] before:h-full before:w-full before:bg-linear-gradient-red-1 before:opacity-0 before:transition-opacity before:duration-200 hover:bg-transparent hover:shadow-xl hover:shadow-red-400/30 hover:before:opacity-100 focus-visible:bg-transparent focus-visible:shadow-xl focus-visible:shadow-red-400/30 focus-visible:before:opacity-100"
           type="submit"
         >
           Subscribe to monthly newsletter
