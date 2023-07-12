@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-roboto)'],
       },
+      fontSize: {
+        '5.5xl': ['3.5rem', '1.125'],
+      },
       colors: {
         red: {
           400: 'hsl(4, 100%, 67%)',
@@ -23,7 +26,10 @@ module.exports = {
         'linear-gradient-red-1': 'linear-gradient(90deg, hsl(346, 100%, 66%), hsl(4, 100%, 67%))',
       },
       screens: {
-        desktop: '1440px',
+        xsm: '550px',
+      },
+      borderRadius: {
+        '4xl': '2rem',
       },
     },
   },
