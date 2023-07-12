@@ -11,16 +11,16 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-gray-800">Stay updated!</h1>
           <div className="mt-5">
             <p className="text-gray-700">Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul className="flex flex-col gap-3 mt-5">
-              <li className="flex gap-4 items-start text-gray-700">
+            <ul className="mt-5 flex flex-col gap-3">
+              <li className="flex items-start gap-4 text-gray-700">
                 <Image src="/images/icon-list.svg" alt="" width={21} height={21} aria-hidden="true" />
                 Product discovery and building what matters
               </li>
-              <li className="flex gap-4 items-start text-gray-700">
+              <li className="flex items-start gap-4 text-gray-700">
                 <Image src="/images/icon-list.svg" alt="" width={21} height={21} aria-hidden="true" />
                 Measuring to ensure updates are a success
               </li>
-              <li className="flex gap-4 items-start text-gray-700">
+              <li className="flex items-start gap-4 text-gray-700">
                 <Image src="/images/icon-list.svg" alt="" width={21} height={21} aria-hidden="true" />
                 And much more!
               </li>
@@ -32,9 +32,9 @@ export default function Home() {
                 <label className="text-sm font-bold text-gray-800" htmlFor="email">
                   Email address
                 </label>
-                {/* <span className="text-red-400 text-sm font-bold row-start-3 md:row-auto md:justify-self-end">Valid email required</span> */}
+                {/* <span className="row-start-3 text-sm font-bold text-red-400 md:row-auto md:justify-self-end">Valid email required</span> */}
                 <input
-                  className="ring-1 ring-gray-400 rounded-md px-6 py-4 focus-visible:outline-none focus-visible:ring-gray-800 focus-visible:ring-2 placeholder:text-gray-400 text-gray-800 w-full md:col-span-2"
+                  className="w-full rounded-md px-6 py-4 text-gray-800 ring-1 ring-gray-400 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-800 md:col-span-2"
                   type="text"
                   name="email"
                   id="email"
@@ -42,7 +42,7 @@ export default function Home() {
                 />
               </div>
               <button
-                className="bg-gray-800 font-bold text-white p-5 rounded-lg relative isolate before:absolute before:w-full before:h-full before:bg-linear-gradient-red-1 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-200 before:-z-[1] before:top-0 before:left-0 overflow-hidden transition-[background-color_shadow] duration-200 hover:bg-transparent hover:shadow-xl hover:shadow-red-400/30"
+                className="relative isolate overflow-hidden rounded-lg bg-gray-800 p-5 font-bold text-white transition-[background-color_shadow] duration-200 before:absolute before:left-0 before:top-0 before:-z-[1] before:h-full before:w-full before:bg-linear-gradient-red-1 before:opacity-0 before:transition-opacity before:duration-200 hover:bg-transparent hover:shadow-xl hover:shadow-red-400/30 hover:before:opacity-100"
                 type="submit"
               >
                 Subscribe to monthly newsletter
