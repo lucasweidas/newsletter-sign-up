@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans-serif': ['var(--font-roboto)'],
+        sans: ['var(--font-roboto)'],
       },
       colors: {
         red: {

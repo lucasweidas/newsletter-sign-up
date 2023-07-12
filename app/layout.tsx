@@ -1,8 +1,14 @@
 import './globals.css';
+import localFont from 'next/font/local';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'], display: 'swap', style: 'normal', variable: '--font-roboto' });
+const roboto = localFont({
+  src: [
+    { path: './fonts/Roboto-Regular.ttf', weight: '400', style: 'normal' },
+    { path: './fonts/Roboto-Bold.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: 'Frontend Mentor | Newsletter sign-up',
@@ -11,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${roboto.variable} font-sans-serif`}>
+    <html lang="en" className={`${roboto.variable} font-sans`}>
       <head>
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
